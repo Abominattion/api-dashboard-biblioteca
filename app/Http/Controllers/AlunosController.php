@@ -17,7 +17,7 @@ class AlunosController extends Controller
     {
         $alunos = Alunos::select("id", "nome", "email", "documento")
             ->orderBy("nome", "ASC")
-            ->paginate(15);
+            ->paginate(2);
 
         if (empty($alunos)) {
             return response()->json([
